@@ -40,6 +40,21 @@ This project is an Electronic Voting Machine (EVM) designed for school parliamen
 3. Edit the candidate names (currently set to 6 names).
 4. After plugging in the Arduino boards, start the Python script by running `run.cmd`.
 
+#### Configure Your Network Interface
+Ensure that your network interface is set to use the IP address 192.168.1.1. This is for the live results.
+
+Open Control Panel.
+Go to Network and Sharing Center.
+Click on the Change adapter settings link.
+Right-click on your active network connection and select Properties.
+Select Internet Protocol Version 4 (TCP/IPv4) and click Properties.
+Select Use the following IP address and enter:
+IP address: 192.168.1.1
+Subnet mask: 255.255.255.0
+Default gateway: Leave it blank or enter your router's IP if needed.
+
+Webpage : http://192.168.1.1:4200/votes
+
 ## Usage
 
 1. Connect the Arduino to the PC and update the correct port in the Python code
