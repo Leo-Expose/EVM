@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voting Results</h1>
+    <table>
+        <tr>
+            <th>Candidate</th>
+            <th>Votes</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td id="votes-A">0</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td id="votes-B">0</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td id="votes-C">0</td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td id="votes-X">0</td>
+        </tr>
+        <tr>
+            <td>Y</td>
+            <td id="votes-Y">0</td>
+        </tr>
+        <tr>
+            <td>Z</td>
+            <td id="votes-Z">0</td>
+        </tr>
+    </table>
+    <script>
+        function updateVotes() {
+            fetch('/votes')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('votes-A').innerText = data.A;
+                    document.getElementById('votes-B').innerText = data.B;
+                    document.getElementById('votes-C').innerText = data.C;
+                    document.getElementById('votes-X').innerText = data.X;
+                    document.getElementById('votes-Y').innerText = data.Y;
+                    document.getElementById('votes-Z').innerText = data.Z;
+                });
+        }
+
+        // Update votes every 5 seconds
+        setInterval(updateVotes, 5000);
+        updateVotes(); // Initial call to display votes immediately
+    </script>
+</body>
+</html>
