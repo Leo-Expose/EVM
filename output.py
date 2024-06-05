@@ -62,7 +62,7 @@ def get_votes():
     return jsonify(votes)
 
 def start_flask():
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False, host='192.168.1.1', port=5000)
 
 def start_voting():
     global running
