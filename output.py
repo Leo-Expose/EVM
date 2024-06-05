@@ -62,7 +62,7 @@ def get_votes():
     return jsonify(votes)
 
 def start_flask():
-    app.run(debug=True, use_reloader=False, host='192.168.1.1', port=5000)
+    app.run(debug=True, use_reloader=False, host='192.168.1.1', port=4200) #port :D
 
 def start_voting():
     global running
@@ -84,11 +84,12 @@ def start_voting():
     finally:
         ser.close()
 
-# Start Flask server in a separate thread
+# Start Flask server ??????
 flask_thread = Thread(target=start_flask)
 flask_thread.start()
 
-# Tkinter GUI setup
+# Tkinter GUI setup 
+#important comment
 root = tk.Tk()
 root.title("Voting Control")
 
@@ -98,9 +99,10 @@ stop_button.pack(pady=20)
 root.geometry("300x200")
 root.protocol("WM_DELETE_WINDOW", stop_voting)
 
-# Start the voting process
+# Starting the voting
 voting_thread = Thread(target=start_voting)
 voting_thread.start()
 
-# Start the Tkinter main loop
+# Start the Tkinter main loop 
+#why is this necessary?
 root.mainloop()
