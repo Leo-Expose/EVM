@@ -42,9 +42,10 @@ This project is an Electronic Voting Machine (EVM) designed for school parliamen
 
 ## Usage
 
-1. Start the Python script by executing `run.cmd`.
-2. The script will initialize and start counting votes as buttons are pressed.
-3. Access the live voting results via the Flask web server.
+1. Connect the Arduino to the PC and update the correct port in the Python code
+2. . Start the Python script by executing `run.cmd`.
+3. The script will initialize and start counting votes as buttons are pressed.
+4. Access the live results using the flask webpage (experimental feature, untested)
 
 ## Notes
 
